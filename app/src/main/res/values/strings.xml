@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ScoreDeck</string>
+    <string name="ScoreHong">00</string>
+    <string name="id_hong">HONG</string>
+    <string name="total_score">Total Score</string>
+    <string name="round">Round</string>
+    <string name="roundNumber">1</string>
+    <!--Hong-->
+    <string name="pointsHong_1">0</string>
+    <string name="oneHong">1</string>
+    <string name="twoHong">2</string>
+    <string name="pointsHong_2">0</string>
+    <string name="threeHong">3</string>
+    <string name="pointsHong_3">0</string>
+    <string name="fourHong">4</string>
+    <string name="pointsHong_4">0</string>
+    <string name="fiveHong">5</string>
+    <string name="pointsHong_5">0</string>
+    <string name="warningHong">W</string>
+    <string name="noWarningsHong">0</string>
+    <!--Chong-->
+    <string name="pointsChong_1">0</string>
+    <string name="pointsChong_2">0</string>
+    <string name="pointsChong_3">0</string>
+    <string name="pointsChong_4">0</string>
+    <string name="pointsChong_5">0</string>
+    <string name="oneChong">1</string>
+    <string name="twoChong">2</string>
+    <string name="threeChong">3</string>
+    <string name="fourChong">4</string>
+    <string name="fiveChong">5</string>
+    <string name="warningChong">W</string>
+    <string name="noWarningsChong">0</string>
+</resources>
