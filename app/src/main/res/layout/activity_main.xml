@@ -44,6 +44,14 @@
                     android:text="@string/total_score"
                     android:textColor="@color/scoreTextColor"
                     android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/roundsHongWon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/roundsHongWon"/>
             </LinearLayout>
 
             <LinearLayout
@@ -74,6 +82,14 @@
                     android:text="@string/total_score"
                     android:textColor="@color/scoreTextColor"
                     android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/roundsChongWon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/roundsChongWon"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -869,6 +885,12 @@
                         android:layout_height="wrap_content"
                         android:onClick="resetBtn"
                         android:src="@drawable/colored_reset" />
+                    <CheckBox
+                        android:id="@+id/checkbox"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/resetAll"
+                        android:layout_gravity="center_vertical"/>
                 </LinearLayout>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>

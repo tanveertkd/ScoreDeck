@@ -3,6 +3,7 @@ package com.example.baseplate.scoredeck;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     int warningHong=0;
     int warningChong=0;
     int roundNumber=1;
+    int roundsHong=0;
+    int roundsChong=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +23,25 @@ public class MainActivity extends AppCompatActivity {
     }
     //Set the number of rounds
     public void addRound(View v){
-        roundNumber+=1;
-        showRoundNumber(roundNumber);
+        int nextRound=roundNumber+=1;
+        if(nextRound>=roundNumber){
+            if(scoreHong>scoreChong){
+                roundsHong++;
+                roundsHongWon(roundsHong);
+            }else{
+                roundsChong++;
+                roundsChongWon(roundsChong);
+            }
+        }
+        showRoundNumber(nextRound);
+    }
+    public void roundsHongWon(int winnerHong){
+        TextView hongWon = (TextView) findViewById(R.id.roundsHongWon);
+        hongWon.setText(String.valueOf(winnerHong));
+    }
+    public void roundsChongWon(int winnerChong){
+        TextView chongWon = (TextView) findViewById(R.id.roundsChongWon);
+        chongWon.setText(String.valueOf(winnerChong));
     }
     public void subRound(View v){
         if(roundNumber==1){
@@ -59,6 +79,14 @@ public class MainActivity extends AppCompatActivity {
     }
     public void addWarningHong(View v){
         warningHong+=1;
+        Toast.makeText(this,"Warnings: "+warningHong, Toast.LENGTH_SHORT).show();
+        warningCheck(scoreHong);
+        showHong(scoreHong);
+    }
+    public void warningCheck(int warn){
+        if(warningHong==3){
+            scoreHong-=1;
+        }
     }
     //Substract for Hong
     public void subOneHong(View v){
@@ -113,6 +141,14 @@ public class MainActivity extends AppCompatActivity {
     }
     public void addWarningChong(View v){
         warningChong+=1;
+        Toast.makeText(this, "Warnings: "+warningChong, Toast.LENGTH_SHORT).show();
+        warningCheckChong(scoreChong);
+        showChong(scoreChong);
+    }
+    public void warningCheckChong(int warn){
+        if(warningChong==3){
+            scoreChong-=1;
+        }
     }
     //Substract for Chong
     public void subOneChong(View v){
@@ -143,10 +179,30 @@ public class MainActivity extends AppCompatActivity {
         chongScore.setText(String.valueOf(Score));
     }
     public void resetBtn(View v){
-        //ImageView resetScores=(ImageView) findViewById(R.id.reset);
-        scoreHong=0;
-        scoreChong=0;
-        showHong(scoreHong);
-        showChong(scoreChong);
+        CheckBox completeReset = (CheckBox) findViewById(R.id.checkbox);
+        boolean totalReset = completeReset.isChecked();
+        if(totalReset) {
+            scoreHong = 0;
+            scoreChong = 0;
+            warningHong = 0;
+            warningChong = 0;
+            roundNumber = 1;
+            roundsHong = 0;
+            roundsChong = 0;
+            showHong(scoreHong);
+            showChong(scoreChong);
+            showRoundNumber(roundNumber);
+            roundsHongWon(roundsHong);
+            roundsChongWon(roundsChong);
+        }
+        else{
+            scoreHong = 0;
+            scoreChong = 0;
+            warningHong = 0;
+            warningChong = 0;
+            showHong(scoreHong);
+            showChong(scoreChong);
+            showRoundNumber(roundNumber);
+        }
     }
 }

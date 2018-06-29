@@ -31,4 +31,7 @@
     <string name="fiveChong">5</string>
     <string name="warningChong">W</string>
     <string name="noWarningsChong">-</string>
+    <string name="roundsHongWon">0</string>
+    <string name="roundsChongWon">0</string>
+    <string name="resetAll">Complete Reset</string>
 </resources>
