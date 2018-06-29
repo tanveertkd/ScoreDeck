@@ -20,9 +20,9 @@
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_weight="1"
+                android:alpha="0.8"
                 android:background="@color/hongBack"
-                android:orientation="vertical"
-                android:alpha="0.8" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/hongS"
@@ -40,19 +40,19 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@color/socreBackColor"
+                    android:padding="5dp"
                     android:text="@string/total_score"
                     android:textColor="@color/scoreTextColor"
-                    android:textSize="20sp"
-                    android:padding="5dp"/>
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_weight="1"
+                android:alpha="0.8"
                 android:background="@color/chongBack"
-                android:orientation="vertical"
-                android:alpha="0.8" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/chongS"
@@ -70,10 +70,10 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@color/socreBackColor"
+                    android:padding="5dp"
                     android:text="@string/total_score"
                     android:textColor="@color/scoreTextColor"
-                    android:textSize="20sp"
-                    android:padding="5dp"/>
+                    android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -81,18 +81,18 @@
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:layout_gravity="center_horizontal"
-            android:orientation="vertical"
+            android:alpha="0.8"
             android:background="@color/roundBack"
-            android:alpha="0.8">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/roudndNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:text="@string/round"
                 android:textAlignment="center"
-                android:textSize="20sp"
-                android:layout_margin="10dp"/>
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,10 +105,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
+                    android:onClick="subRound"
                     android:src="@drawable/ic_if_rounded_left" />
 
                 <TextView
-                    android:id="@+id/roundno"
+                    android:id="@+id/roundnumber"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -123,625 +124,750 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
+                    android:onClick="addRound"
                     android:src="@drawable/ic_if_rounded_right" />
             </LinearLayout>
         </LinearLayout>
+
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
+
             <LinearLayout
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_horizontal" >
+                        android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
                             <ImageView
                                 android:id="@+id/minusHong1"
-                                android:layout_height="wrap_content"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:src="@drawable/minus_points"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginRight="15dp"
-                                android:layout_gravity="center_vertical"/>
+                                android:layout_weight="1"
+                                android:onClick="subOneHong"
+                                android:src="@drawable/minus_points" />
+
                             <TextView
                                 android:id="@+id/oneHongM"
-                                android:layout_height="wrap_content"
                                 android:layout_width="0dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/oneHong"
-                                android:textSize="25sp"/>
+                                android:textSize="25sp" />
+
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="9dp"
                                 android:layout_weight="1"
                                 android:text="@string/pointsHong_1"
-                                android:textSize="30sp"
-                                android:layout_marginHorizontal="9dp"/>
+                                android:textAlignment="center"
+                                android:textSize="30sp" />
+
                             <TextView
                                 android:id="@+id/oneHongA"
-                                android:layout_height="wrap_content"
                                 android:layout_width="0dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/oneHong"
-                                android:textSize="25sp"/>
+                                android:textSize="25sp" />
+
                             <ImageView
                                 android:id="@+id/addHong1"
-                                android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/add_points"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="15dp"
-                                android:layout_gravity="center_vertical"/>
+                                android:layout_weight="1"
+                                android:onClick="addOneHong"
+                                android:src="@drawable/add_points" />
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minusHong2"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="subTwoHong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/twoHongM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/twoHong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/pointsHong_2"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/twoHongA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/twoHong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <ImageView
                                     android:id="@+id/addHong2"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addTwoHong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minusHong3"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="subThreeHong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/threeHongM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/threeHong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/pointsHong_3"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/threeHongA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/threeHong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <ImageView
                                     android:id="@+id/addHong3"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addThreeHong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minusHong4"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="subFourHong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/fourHongM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/fourHong"
                                     android:textSize="25sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/pointsHong_4"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/fourHongA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/fourHong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <ImageView
                                     android:id="@+id/addHong4"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addFourHong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minusHong5"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="subFiveHong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/fiveHongM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/fiveHong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/pointsHong_5"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/fiveHongA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/fiveHong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <ImageView
                                     android:id="@+id/addHong5"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addFiveHong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minusHongWarning"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="14dp"
-                                    android:layout_gravity="center_vertical" />
+                                    android:layout_weight="1"
+                                    android:onClick="subWarningHong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/warningHongM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/warningHong"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/noWarningsHong"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/warningHongA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/warningHong"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp" />
+
                                 <ImageView
                                     android:id="@+id/addHongWarning"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="14dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addWarningHong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_horizontal" >
+                        android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
                             <ImageView
                                 android:id="@+id/minus1"
-                                android:layout_height="wrap_content"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:src="@drawable/minus_points"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginRight="15dp"
-                                android:layout_gravity="center_vertical"/>
+                                android:layout_weight="1"
+                                android:onClick="subOneChong"
+                                android:src="@drawable/minus_points" />
+
                             <TextView
                                 android:id="@+id/oneM"
-                                android:layout_height="wrap_content"
                                 android:layout_width="0dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/oneChong"
-                                android:textSize="25sp"/>
+                                android:textSize="25sp" />
+
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="9dp"
                                 android:layout_weight="1"
                                 android:text="@string/pointsChong_1"
-                                android:textSize="30sp"
-                                android:layout_marginHorizontal="9dp"/>
+                                android:textAlignment="center"
+                                android:textSize="30sp" />
+
                             <TextView
                                 android:id="@+id/oneA"
-                                android:layout_height="wrap_content"
                                 android:layout_width="0dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/oneChong"
-                                android:textSize="25sp"/>
+                                android:textSize="25sp" />
+
                             <ImageView
                                 android:id="@+id/add1"
-                                android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/add_points"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="15dp"
-                                android:layout_gravity="center_vertical"/>
+                                android:layout_weight="1"
+                                android:onClick="addOneChong"
+                                android:src="@drawable/add_points" />
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minus2"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="15dp"
-                                    android:layout_gravity="center_vertical" />
+                                    android:layout_weight="1"
+                                    android:onClick="subTwoChong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/twoM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/twoChong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/pointsChong_2"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/twoA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/twoChong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <ImageView
                                     android:id="@+id/add2"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addTwoChong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp" >
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minus3"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="subThreeChong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/threeM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/threeChong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/pointsChong_3"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/threeA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/threeChong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <ImageView
                                     android:id="@+id/add3"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addThreeChong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minus4"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="subFourChong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/fourM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/fourChong"
-                                    android:textSize="25sp"
-                                    />
+                                    android:textSize="25sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/pointsChong_4"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/fourA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/fourChong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <ImageView
                                     android:id="@+id/add4"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addFourChong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minus5"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="subFiveChong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/fiveM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/fiveChong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/pointsChong_5"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/fiveA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/fiveChong"
-                                    android:textSize="25sp"/>
+                                    android:textSize="25sp" />
+
                                 <ImageView
                                     android:id="@+id/add5"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addFiveChong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_height="match_parent"
                             android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content">
+
                                 <ImageView
                                     android:id="@+id/minusWarning"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/minus_points"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginRight="14dp"
-                                    android:layout_gravity="center_vertical" />
+                                    android:layout_weight="1"
+                                    android:onClick="subWarningChong"
+                                    android:src="@drawable/minus_points" />
+
                                 <TextView
                                     android:id="@+id/warningM"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/warningChong"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp" />
+
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="9dp"
                                     android:layout_weight="1"
                                     android:text="@string/noWarningsChong"
-                                    android:textSize="30sp"
-                                    android:layout_marginHorizontal="9dp"/>
+                                    android:textAlignment="center"
+                                    android:textSize="30sp" />
+
                                 <TextView
                                     android:id="@+id/warningA"
-                                    android:layout_height="wrap_content"
                                     android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/warningChong"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp" />
+
                                 <ImageView
                                     android:id="@+id/addWarning"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/add_points"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="14dp"
-                                    android:layout_gravity="center_vertical"/>
+                                    android:layout_weight="1"
+                                    android:onClick="addWarningChong"
+                                    android:src="@drawable/add_points" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="10dp">
+
                     <ImageView
                         android:id="@+id/reset"
-                        android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="resetBtn"
                         android:src="@drawable/colored_reset" />
                 </LinearLayout>
             </LinearLayout>
