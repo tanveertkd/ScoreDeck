@@ -34,4 +34,9 @@
     <string name="roundsHongWon">0</string>
     <string name="roundsChongWon">0</string>
     <string name="resetAll">Complete Reset</string>
+    <string name="getResult">Get Result</string>
+    <string name="include_rounds">Include rounds</string>
+    <string name="closePopUp">X</string>
+    <string name="hong_wins">Hong Wins!</string>
+    <string name="closetbn">Close</string>
 </resources>

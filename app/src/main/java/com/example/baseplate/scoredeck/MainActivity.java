@@ -1,5 +1,6 @@
 package com.example.baseplate.scoredeck;
 
+import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +16,12 @@ public class MainActivity extends AppCompatActivity {
     int roundNumber=1;
     int roundsHong=0;
     int roundsChong=0;
-
+    Dialog popup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        popup = new Dialog(this);
     }
     //Set the number of rounds
     public void addRound(View v){

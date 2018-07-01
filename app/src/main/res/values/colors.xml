@@ -8,4 +8,6 @@
     <color name="scoreTextColor">#FBFBFB</color>
     <color name="socreBackColor">#5D5959</color>
     <color name="roundBack">#FFFF00</color>
+    <color name="blueBtn">#2f333f</color>
+    <color name="lightblue">#49acd5</color>
 </resources>

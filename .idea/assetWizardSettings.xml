@@ -19,9 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="add_points" />
+                            <entry key="height" value="128" />
+                            <entry key="outputName" value="ic_if_sport_badges_05_2064041" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="E:\ScoreDeck Resources\if_circle-arrow_up-upload-glyph_763479.svg" />
+                            <entry key="sourceFile" value="E:\ScoreDeck Resources\if_sport_badges-05_2064041.svg" />
+                            <entry key="width" value="128" />
                           </map>
                         </option>
                       </PersistentState>
